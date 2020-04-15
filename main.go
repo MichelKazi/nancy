@@ -34,6 +34,7 @@ import (
 	"github.com/golang/dep"
 	"github.com/sonatype-nexus-community/nancy/audit"
 	"github.com/sonatype-nexus-community/nancy/buildversion"
+	"github.com/sonatype-nexus-community/nancy/cmd"
 	"github.com/sonatype-nexus-community/nancy/configuration"
 	"github.com/sonatype-nexus-community/nancy/customerrors"
 	"github.com/sonatype-nexus-community/nancy/iq"
@@ -43,6 +44,10 @@ import (
 )
 
 func main() {
+	cmd.Execute()
+}
+
+func mainOld() {
 	LogLady.Info("Starting Nancy")
 
 	if len(os.Args) > 1 && os.Args[1] == "iq" {
