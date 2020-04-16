@@ -47,6 +47,7 @@ func main() {
 	cmd.Execute()
 }
 
+//noinspection GoUnusedFunction
 func mainOld() {
 	LogLady.Info("Starting Nancy")
 
