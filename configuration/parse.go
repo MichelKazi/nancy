@@ -20,6 +20,7 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
+	"github.com/sonatype-nexus-community/nancy/customerrors"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -170,7 +171,8 @@ func Parse(args []string) (Configuration, error) {
 Options:
 `)
 		flag.PrintDefaults()
-		os.Exit(2)
+		_ = customerrors.Exit(2)
+		return
 	}
 
 	ConfigLocation = filepath.Join(HomeDir, types.OssIndexDirName, types.OssIndexConfigFileName)
